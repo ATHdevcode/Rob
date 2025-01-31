@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=3 uid="uid://ce1pla2cr7m84"]
+
+[ext_resource type="PackedScene" uid="uid://cplwhutbpdq0t" path="res://entity/player.tscn" id="1_3reh4"]
+[ext_resource type="Texture2D" uid="uid://brqhaeye7014y" path="res://assets/tile1.png" id="1_6k65k"]
+[ext_resource type="Texture2D" uid="uid://cgn2mmomp0s61" path="res://assets/tile2.png" id="2_8ts60"]
+[ext_resource type="PackedScene" uid="uid://rf4i575pu4f1" path="res://entity/cctv.tscn" id="2_xyd0q"]
+[ext_resource type="Texture2D" uid="uid://54fwvojlkn5t" path="res://assets/tile3.png" id="3_gginr"]
+[ext_resource type="PackedScene" uid="uid://ci884hjcffifr" path="res://entity/guards.tscn" id="3_ve5o2"]
+[ext_resource type="PackedScene" uid="uid://cv7a5h842ktj" path="res://entity/pincode_door.tscn" id="4_ncosw"]
+[ext_resource type="PackedScene" uid="uid://c1plb1l114lu4" path="res://entity/hideables.tscn" id="8_u81dk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odigi"]
+texture = ExtResource("1_6k65k")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3owhg"]
+texture = ExtResource("2_8ts60")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnf0c"]
+texture = ExtResource("3_gginr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gpls2"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_odigi")
+sources/1 = SubResource("TileSetAtlasSource_3owhg")
+sources/2 = SubResource("TileSetAtlasSource_rnf0c")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycqpj"]
+size = Vector2(341, 42)
+
+[node name="level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gpls2")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 589838, 0, 0, 589837, 1, 0, 589836, 1, 0, 589835, 1, 0, 589834, 1, 0, 589833, 1, 0, 589832, 1, 0, 589831, 1, 0, 589830, 1, 0, 589829, 1, 0, 589828, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 1245198, 1, 0, 1245197, 2, 0, 1245196, 2, 0, 1245195, 2, 0, 1245194, 2, 0, 1245193, 2, 0, 1245192, 2, 0, 1245191, 2, 0, 1245190, 2, 0, 1245189, 2, 0, 1245188, 2, 0, 1245187, 2, 0, 1245186, 2, 0, 1245185, 2, 0, 1245184, 2, 0, 1310719, 1, 0, 1310718, 1, 0, 14, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, 851982, 0, 0, 917518, 0, 0, 983054, 0, 0, 1048590, 0, 0, 1114126, 0, 0, 1179662, 0, 0, 1245183, 0, 805306368, 1179647, 0, 805306368, 1114111, 0, 805306368, 1048575, 0, 805306368, 983039, 0, 805306368, 917503, 0, 805306368, 851967, 0, 805306368, 786431, 0, 805306368, 720895, 0, 805306368, 655359, 0, 805306368, 589823, 0, 805306368, 524287, 0, 805306368, 458751, 0, 805306368, 393215, 0, 805306368, 327679, 0, 805306368, 262143, 0, 805306368, 196607, 0, 805306368, 131071, 0, 805306368, 65535, 0, 805306368, -1, 0, 805306368, -65537, 0, 805306368, -131072, 0, 1610612736, -131071, 0, 1610612736, -131070, 0, 1610612736, -131069, 0, 1610612736, -131068, 0, 1610612736, -131067, 0, 1610612736, -131066, 0, 1610612736, -131065, 0, 1610612736, -131064, 0, 1610612736, -131063, 0, 1610612736, -131062, 0, 1610612736, -131061, 0, 1610612736, -131060, 0, 1610612736, -131059, 0, 1610612736, -131058, 0, 1610612736, -65522, 0, 0, 1376255, 0, 1610612736, 1310720, 0, 1610612736, 1310721, 0, 1610612736, 1310722, 0, 1610612736, 1310723, 0, 1610612736, 1310724, 0, 1610612736, 1310725, 0, 1610612736, 1310726, 0, 1610612736, 1310727, 0, 1610612736, 1310728, 0, 1610612736, 1310729, 0, 1610612736, 1310730, 0, 1610612736, 1310731, 0, 1610612736, 1310732, 0, 1610612736, 1310733, 0, 1610612736, 1310734, 0, 1610612736)
+
+[node name="element" type="Node2D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="element"]
+position = Vector2(-4, 142)
+
+[node name="ColorRect" type="ColorRect" parent="element/StaticBody2D"]
+offset_right = 332.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="element/StaticBody2D"]
+position = Vector2(160.5, 21)
+shape = SubResource("RectangleShape2D_ycqpj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="element"]
+position = Vector2(148, 312)
+
+[node name="ColorRect" type="ColorRect" parent="element/StaticBody2D2"]
+offset_right = 332.0
+offset_bottom = 40.0
+color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="element/StaticBody2D2"]
+position = Vector2(160.5, 21)
+shape = SubResource("RectangleShape2D_ycqpj")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="element"]
+position = Vector2(0, 478)
+
+[node name="ColorRect" type="ColorRect" parent="element/StaticBody2D3"]
+offset_right = 332.0
+offset_bottom = 40.0
+color = Color(0.0591259, 0.059126, 0.0591259, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="element/StaticBody2D3"]
+position = Vector2(160.5, 21)
+shape = SubResource("RectangleShape2D_ycqpj")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="element"]
+position = Vector2(-102, 616)
+
+[node name="ColorRect" type="ColorRect" parent="element/StaticBody2D4"]
+offset_right = 332.0
+offset_bottom = 40.0
+color = Color(0.275091, 0.275091, 0.275091, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="element/StaticBody2D4"]
+position = Vector2(160.5, 21)
+shape = SubResource("RectangleShape2D_ycqpj")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="element"]
+position = Vector2(226, 616)
+
+[node name="ColorRect" type="ColorRect" parent="element/StaticBody2D5"]
+offset_top = -1.0
+offset_right = 332.0
+offset_bottom = 39.0
+color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="element/StaticBody2D5"]
+position = Vector2(160.5, 21)
+shape = SubResource("RectangleShape2D_ycqpj")
+
+[node name="Hideables" parent="." instance=ExtResource("8_u81dk")]
+position = Vector2(227, 244)
+
+[node name="Player" parent="." instance=ExtResource("1_3reh4")]
+position = Vector2(52, 77)
+
+[node name="cctv" parent="." instance=ExtResource("2_xyd0q")]
+position = Vector2(431, 20)
+
+[node name="Guards" parent="." instance=ExtResource("3_ve5o2")]
+position = Vector2(218, 244)
+
+[node name="PincodeDoor" parent="." instance=ExtResource("4_ncosw")]
+position = Vector2(155, 476)

@@ -1,0 +1,14 @@
+Rob
+
+//done
+-created player and ground
+-created cctv and dectection of player
+
+
+//todo
+
+- guards that move left and right with limted vison
+- pin-code/key locked doors
+- hideable location
+- power ups
+- traps in the important area

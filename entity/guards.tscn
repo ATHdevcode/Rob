@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci884hjcffifr"]
+
+[ext_resource type="Script" path="res://src/guards.gd" id="1_we5o6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi2jv"]
+size = Vector2(19, 24)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uudab"]
+b = Vector2(139, 0)
+
+[node name="Guards" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_we5o6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = -26.0
+offset_right = 10.0
+offset_bottom = 19.0
+color = Color(0.23647, 0.197902, 0.503734, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_pi2jv")
+
+[node name="point" type="Area2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="point"]
+target_position = Vector2(60, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="point"]
+shape = SubResource("SegmentShape2D_uudab")
