@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://co558bxr0eqpm"]
+
+[ext_resource type="Texture2D" uid="uid://brqhaeye7014y" path="res://assets/tile1.png" id="1_56su2"]
+[ext_resource type="Texture2D" uid="uid://cgn2mmomp0s61" path="res://assets/tile2.png" id="2_uyuio"]
+[ext_resource type="Texture2D" uid="uid://54fwvojlkn5t" path="res://assets/tile3.png" id="3_l36ex"]
+[ext_resource type="PackedScene" uid="uid://ci884hjcffifr" path="res://entity/guards.tscn" id="5_ir5ac"]
+[ext_resource type="PackedScene" uid="uid://cplwhutbpdq0t" path="res://entity/player.tscn" id="5_mme4g"]
+[ext_resource type="PackedScene" uid="uid://lmxxs3hjcnwv" path="res://entity/key.tscn" id="6_vw6i6"]
+[ext_resource type="PackedScene" uid="uid://rf4i575pu4f1" path="res://entity/cctv.tscn" id="7_ot0ky"]
+[ext_resource type="PackedScene" uid="uid://brn7h7850ojyd" path="res://entity/key_door.tscn" id="8_yto1n"]
+[ext_resource type="PackedScene" uid="uid://c4b1m3mtdypmt" path="res://entity/paper.tscn" id="9_1akde"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjx2j"]
+texture = ExtResource("1_56su2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgcxv"]
+texture = ExtResource("2_uyuio")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppxmo"]
+texture = ExtResource("3_l36ex")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ory06"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_jjx2j")
+sources/1 = SubResource("TileSetAtlasSource_sgcxv")
+sources/2 = SubResource("TileSetAtlasSource_ppxmo")
+
+[node name="level_3" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ory06")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 262150, 1, 0, 262147, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 15, 1, 0, 16, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 0, 805306368, 262146, 1, 0, 262145, 1, 0, 262144, 0, 805306368, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 65556, 0, 0, 131092, 0, 0, 196628, 0, 0, 262164, 0, 0, 327700, 0, 0, 393236, 0, 0, 458772, 0, 0, 524308, 0, 0, 589844, 1, 0, 655380, 0, 0, 720916, 0, 0, 786452, 0, 0, 851988, 0, 0, 917524, 0, 0, 327694, 0, 805306368, 393230, 0, 805306368, 458766, 0, 805306368, 589838, 0, 0, 655374, 0, 805306368, 720910, 0, 805306368, 786446, 0, 805306368, 851982, 0, 805306368, 917518, 0, 805306368, 983054, 0, 805306368, 1048590, 0, 805306368, 1114126, 0, 805306368, 1179662, 0, 0, 983060, 0, 0, 1048596, 0, 0, 1114132, 0, 0, 1179668, 0, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 65536, 0, 805306368, 131072, 0, 805306368, 196608, 0, 805306368, 327680, 0, 805306368, 393216, 0, 805306368, 458752, 0, 805306368, 524288, 0, 805306368, 589824, 0, 805306368, 655360, 0, 805306368, 720896, 0, 805306368, 786432, 0, 805306368, 851968, 0, 805306368, 917504, 0, 805306368, 983040, 0, 805306368, 1048576, 0, 805306368, 1114112, 0, 805306368, 1179648, 0, 805306368, 1245184, 0, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 851981, 1, 0, 851969, 1, 0, 1179652, 1, 0, 851972, 1, 0, 1179657, 1, 0, 851977, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0)
+
+[node name="Player" parent="." instance=ExtResource("5_mme4g")]
+position = Vector2(79, 81)
+
+[node name="Guards" parent="." instance=ExtResource("5_ir5ac")]
+position = Vector2(560, 520)
+
+[node name="key" parent="." instance=ExtResource("6_vw6i6")]
+position = Vector2(608, 536)
+
+[node name="cctv" parent="." instance=ExtResource("7_ot0ky")]
+position = Vector2(56, 168)
+
+[node name="KeyDoor" parent="." instance=ExtResource("8_yto1n")]
+position = Vector2(144, 576)
+
+[node name="cctv2" parent="." instance=ExtResource("7_ot0ky")]
+position = Vector2(304, 448)
+
+[node name="paper" parent="." instance=ExtResource("9_1akde")]
+position = Vector2(320, 224)
+text = ""

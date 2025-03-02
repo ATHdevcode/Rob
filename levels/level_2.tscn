@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://ce5nhdqcsckgw"]
+
+[ext_resource type="Texture2D" uid="uid://brqhaeye7014y" path="res://assets/tile1.png" id="1_x5txi"]
+[ext_resource type="Texture2D" uid="uid://cgn2mmomp0s61" path="res://assets/tile2.png" id="2_kcg6l"]
+[ext_resource type="Texture2D" uid="uid://54fwvojlkn5t" path="res://assets/tile3.png" id="3_5dltr"]
+[ext_resource type="PackedScene" uid="uid://cplwhutbpdq0t" path="res://entity/player.tscn" id="4_p1uf5"]
+[ext_resource type="PackedScene" uid="uid://rf4i575pu4f1" path="res://entity/cctv.tscn" id="5_thi7b"]
+[ext_resource type="PackedScene" uid="uid://c1plb1l114lu4" path="res://entity/hideables.tscn" id="6_dslc3"]
+[ext_resource type="PackedScene" uid="uid://ci884hjcffifr" path="res://entity/guards.tscn" id="7_m3rsy"]
+[ext_resource type="PackedScene" uid="uid://lmxxs3hjcnwv" path="res://entity/key.tscn" id="8_2kpsg"]
+[ext_resource type="PackedScene" uid="uid://brn7h7850ojyd" path="res://entity/key_door.tscn" id="9_0s5we"]
+[ext_resource type="PackedScene" uid="uid://cvmwpcup4fgcl" path="res://entity/victory_door.tscn" id="10_ercmh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epist"]
+texture = ExtResource("1_x5txi")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qo0bm"]
+texture = ExtResource("2_kcg6l")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksi1u"]
+texture = ExtResource("3_5dltr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k0p1t"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_epist")
+sources/1 = SubResource("TileSetAtlasSource_qo0bm")
+sources/2 = SubResource("TileSetAtlasSource_ksi1u")
+
+[node name="level_2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_k0p1t")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 0, 805306368, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 458767, 0, 0, 458766, 1, 0, 458765, 1, 0, 458764, 1, 0, 458763, 1, 0, 458762, 1, 0, 458761, 1, 0, 458760, 1, 0, 458759, 1, 0, 458758, 1, 0, 458757, 1, 0, 458756, 1, 0, 458755, 1, 0, 851968, 0, 805306368, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 1245184, 0, 805306368, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 0, 0, 1179663, 0, 0, 1114127, 0, 0, 1048591, 0, 0, 983055, 0, 0, 917519, 0, 0, 851983, 0, 0, 786447, 0, 0, 720911, 0, 0, 655375, 0, 0, 589839, 0, 0, 524303, 0, 0, 393231, 0, 0, 327695, 0, 0, 262159, 0, 0, 196623, 0, 0, 131087, 0, 0, 65551, 0, 0, 15, 0, 0, -65521, 0, 0, -131072, 1, 0, -131071, 1, 0, -131070, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131065, 1, 0, -131066, 1, 0, -131067, 1, 0, -131068, 1, 0, -131069, 1, 0, -131064, 1, 0, -65536, 0, 805306368, 0, 0, 805306368, 65536, 0, 805306368, 131072, 0, 805306368, 196608, 0, 805306368, 327680, 0, 805306368, 393216, 0, 805306368, 458752, 0, 805306368, 524288, 0, 805306368, 589824, 0, 805306368, 655360, 0, 805306368, 720896, 0, 805306368, 786432, 0, 805306368, 917504, 0, 805306368, 983040, 0, 805306368, 1048576, 0, 805306368, 1114112, 0, 805306368, 1179648, 0, 805306368, 524291, 1, 805306368, 589827, 1, 805306368)
+
+[node name="Hideables" parent="." instance=ExtResource("6_dslc3")]
+position = Vector2(311, 190)
+
+[node name="Player" parent="." instance=ExtResource("4_p1uf5")]
+position = Vector2(96, 85)
+
+[node name="cctv" parent="." instance=ExtResource("5_thi7b")]
+position = Vector2(458, -20)
+
+[node name="Guards" parent="." instance=ExtResource("7_m3rsy")]
+position = Vector2(303, 202)
+dis = 60
+
+[node name="key" parent="." instance=ExtResource("8_2kpsg")]
+position = Vector2(167, 203)
+
+[node name="KeyDoor" parent="." instance=ExtResource("9_0s5we")]
+position = Vector2(243, 619)
+
+[node name="VictoryDoor" parent="." instance=ExtResource("10_ercmh")]
+position = Vector2(52, 597)

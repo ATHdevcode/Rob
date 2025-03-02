@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://brn7h7850ojyd"]
+
+[ext_resource type="Script" path="res://src/key_door.gd" id="1_v75tu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk0w5"]
+size = Vector2(38, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijufi"]
+size = Vector2(91, 128)
+
+[node name="KeyDoor" type="StaticBody2D"]
+script = ExtResource("1_v75tu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -19.0
+offset_top = -140.0
+offset_right = 21.0
+offset_bottom = 1.0
+color = Color(0.909504, 0.150645, 0.407617, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -67.5)
+shape = SubResource("RectangleShape2D_jk0w5")
+
+[node name="pin" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pin"]
+position = Vector2(-0.5, -54)
+shape = SubResource("RectangleShape2D_ijufi")
+
+[connection signal="area_entered" from="pin" to="." method="_on_pin_area_entered"]
+[connection signal="area_exited" from="pin" to="." method="_on_pin_area_exited"]
+[connection signal="body_entered" from="pin" to="." method="_on_pin_body_entered"]

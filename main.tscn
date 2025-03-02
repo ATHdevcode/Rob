@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7nkoya623u5o"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_fr2rg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fr2rg")
+
+[node name="block" type="Node2D" parent="."]
+
+[node name="block1" type="Node2D" parent="block"]
+
+[node name="Label" type="Label" parent="block/block1"]
+offset_left = 120.0
+offset_top = 126.0
+offset_right = 356.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(0.845444, 0.816909, 0.530767, 1)
+theme_override_colors/font_shadow_color = Color(0.641682, 0.35081, 5.77569e-07, 1)
+theme_override_colors/font_outline_color = Color(0.836556, 0.513642, 0.898623, 1)
+theme_override_font_sizes/font_size = 50
+text = "ROB
+MASTERY"
+horizontal_alignment = 1
+
+[node name="play" type="Button" parent="block/block1"]
+offset_left = 194.0
+offset_top = 323.0
+offset_right = 289.0
+offset_bottom = 384.0
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="block/block1"]
+offset_left = 194.0
+offset_top = 420.0
+offset_right = 289.0
+offset_bottom = 481.0
+text = "ABOUT"
+
+[node name="block3" type="Node2D" parent="block"]
+position = Vector2(-500, 0)
+
+[node name="Label" type="Label" parent="block/block3"]
+offset_top = 52.0
+offset_right = 236.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.845444, 0.816909, 0.530767, 1)
+theme_override_colors/font_shadow_color = Color(0.641682, 0.35081, 5.77569e-07, 1)
+theme_override_colors/font_outline_color = Color(0.836556, 0.513642, 0.898623, 1)
+theme_override_font_sizes/font_size = 50
+text = "LEVELS"
+horizontal_alignment = 1
+
+[node name="lv1" type="Button" parent="block/block3"]
+offset_left = 45.0
+offset_top = 165.0
+offset_right = 140.0
+offset_bottom = 226.0
+text = "1"
+
+[node name="lv2" type="Button" parent="block/block3"]
+offset_left = 194.0
+offset_top = 165.0
+offset_right = 289.0
+offset_bottom = 226.0
+text = "2"
+
+[node name="lv3" type="Button" parent="block/block3"]
+offset_left = 326.0
+offset_top = 165.0
+offset_right = 421.0
+offset_bottom = 226.0
+text = "3
+"
+
+[node name="lv4" type="Button" parent="block/block3"]
+offset_left = 45.0
+offset_top = 267.0
+offset_right = 140.0
+offset_bottom = 328.0
+text = "4
+"
+
+[node name="lv5" type="Button" parent="block/block3"]
+offset_left = 194.0
+offset_top = 267.0
+offset_right = 289.0
+offset_bottom = 328.0
+text = "5
+"
+
+[node name="lv6" type="Button" parent="block/block3"]
+offset_left = 326.0
+offset_top = 267.0
+offset_right = 421.0
+offset_bottom = 328.0
+text = "6
+"
+
+[node name="back" type="Button" parent="block/block3"]
+offset_left = 194.0
+offset_top = 420.0
+offset_right = 289.0
+offset_bottom = 481.0
+text = "BACK"
+
+[node name="block2" type="Node2D" parent="block"]
+position = Vector2(500, 0)
+
+[node name="Label" type="Label" parent="block/block2"]
+offset_left = 47.0
+offset_top = 126.0
+offset_right = 299.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0.845444, 0.816909, 0.530767, 1)
+theme_override_colors/font_shadow_color = Color(0.641682, 0.35081, 5.77569e-07, 1)
+theme_override_colors/font_outline_color = Color(0.836556, 0.513642, 0.898623, 1)
+theme_override_font_sizes/font_size = 50
+text = "By
+Aswabth.k
+2025"
+
+[node name="back" type="Button" parent="block/block2"]
+offset_left = 194.0
+offset_top = 420.0
+offset_right = 289.0
+offset_bottom = 481.0
+text = "BACK"
+
+[connection signal="pressed" from="block/block1/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="block/block1/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="block/block3/lv1" to="." method="_on_lv_1_pressed"]
+[connection signal="pressed" from="block/block3/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="block/block2/back" to="." method="_on_back_pressed"]
