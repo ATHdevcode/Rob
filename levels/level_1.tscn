@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce1pla2cr7m84"]
+[gd_scene load_steps=16 format=3 uid="uid://ce1pla2cr7m84"]
 
 [ext_resource type="PackedScene" uid="uid://cplwhutbpdq0t" path="res://entity/player.tscn" id="1_3reh4"]
 [ext_resource type="Texture2D" uid="uid://brqhaeye7014y" path="res://assets/tile1.png" id="1_6k65k"]
@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://rf4i575pu4f1" path="res://entity/cctv.tscn" id="2_xyd0q"]
 [ext_resource type="Texture2D" uid="uid://54fwvojlkn5t" path="res://assets/tile3.png" id="3_gginr"]
 [ext_resource type="PackedScene" uid="uid://ci884hjcffifr" path="res://entity/guards.tscn" id="3_ve5o2"]
-[ext_resource type="PackedScene" uid="uid://cv7a5h842ktj" path="res://entity/pincode_door.tscn" id="4_ncosw"]
 [ext_resource type="PackedScene" uid="uid://c1plb1l114lu4" path="res://entity/hideables.tscn" id="8_u81dk"]
+[ext_resource type="PackedScene" uid="uid://brn7h7850ojyd" path="res://entity/key_door.tscn" id="9_5282w"]
+[ext_resource type="PackedScene" uid="uid://cvmwpcup4fgcl" path="res://entity/victory_door.tscn" id="10_6pbpl"]
+[ext_resource type="PackedScene" uid="uid://lmxxs3hjcnwv" path="res://entity/key.tscn" id="10_qfr5a"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odigi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4kl8"]
 texture = ExtResource("1_6k65k")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -18,7 +20,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3owhg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtojt"]
 texture = ExtResource("2_8ts60")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -27,7 +29,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnf0c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fedj"]
 texture = ExtResource("3_gginr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -40,9 +42,9 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
-sources/0 = SubResource("TileSetAtlasSource_odigi")
-sources/1 = SubResource("TileSetAtlasSource_3owhg")
-sources/2 = SubResource("TileSetAtlasSource_rnf0c")
+sources/0 = SubResource("TileSetAtlasSource_t4kl8")
+sources/1 = SubResource("TileSetAtlasSource_wtojt")
+sources/2 = SubResource("TileSetAtlasSource_1fedj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycqpj"]
 size = Vector2(341, 42)
@@ -123,13 +125,23 @@ shape = SubResource("RectangleShape2D_ycqpj")
 position = Vector2(227, 244)
 
 [node name="Player" parent="." instance=ExtResource("1_3reh4")]
-position = Vector2(52, 77)
+position = Vector2(58, 94)
 
 [node name="cctv" parent="." instance=ExtResource("2_xyd0q")]
 position = Vector2(431, 20)
 
+[node name="cctv2" parent="." instance=ExtResource("2_xyd0q")]
+position = Vector2(429, 337)
+speed = 0.8
+
 [node name="Guards" parent="." instance=ExtResource("3_ve5o2")]
 position = Vector2(218, 244)
 
-[node name="PincodeDoor" parent="." instance=ExtResource("4_ncosw")]
-position = Vector2(155, 476)
+[node name="KeyDoor" parent="." instance=ExtResource("9_5282w")]
+position = Vector2(260, 479)
+
+[node name="key" parent="." instance=ExtResource("10_qfr5a")]
+position = Vector2(255, 75)
+
+[node name="VictoryDoor" parent="." instance=ExtResource("10_6pbpl")]
+position = Vector2(23, 602)

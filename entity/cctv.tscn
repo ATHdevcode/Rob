@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://rf4i575pu4f1"]
+[gd_scene load_steps=5 format=3 uid="uid://rf4i575pu4f1"]
 
 [ext_resource type="Script" path="res://src/cctv.gd" id="1_e57qr"]
+[ext_resource type="Texture2D" uid="uid://ce74f6iirodmi" path="res://assets/vision.png" id="2_r6e68"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbbn7"]
-size = Vector2(11, 175)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yxpf2"]
+blend_mode = 1
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qg5r2"]
+a = Vector2(-0.5, -48.5)
+b = Vector2(-0.5, 87.5)
 
 [node name="cctv" type="CharacterBody2D"]
 script = ExtResource("1_e57qr")
@@ -24,6 +29,11 @@ offset_right = 19.0
 offset_bottom = 30.0
 color = Color(0.277447, 0.330058, 0.697748, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="RayCast2D/ColorRect"]
+material = SubResource("CanvasItemMaterial_yxpf2")
+position = Vector2(18, 83)
+texture = ExtResource("2_r6e68")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RayCast2D"]
 position = Vector2(0.5, 77.5)
-shape = SubResource("RectangleShape2D_qbbn7")
+shape = SubResource("SegmentShape2D_qg5r2")

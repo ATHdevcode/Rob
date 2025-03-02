@@ -3,12 +3,14 @@ Rob
 //done
 -created player and ground
 -created cctv and dectection of player
-
+-guards that move left and right with limted vison
+-pin-code/key locked doors
+-hideable location
 
 //todo
 
-- guards that move left and right with limted vison
-- pin-code/key locked doors
-- hideable location
-- power ups
+- 
+- 
+- 
+- power ups#dealy dev
 - traps in the important area

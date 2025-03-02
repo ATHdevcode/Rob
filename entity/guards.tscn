@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci884hjcffifr"]
+[gd_scene load_steps=5 format=3 uid="uid://ci884hjcffifr"]
 
 [ext_resource type="Script" path="res://src/guards.gd" id="1_we5o6"]
+[ext_resource type="Texture2D" uid="uid://dcm7xye2apb7w" path="res://assets/reaction.png" id="2_h1smu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi2jv"]
 size = Vector2(19, 24)
@@ -27,7 +28,12 @@ shape = SubResource("RectangleShape2D_pi2jv")
 [node name="point" type="Area2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="point"]
-target_position = Vector2(60, 0)
+target_position = Vector2(160, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="point"]
 shape = SubResource("SegmentShape2D_uudab")
+
+[node name="Reaction" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -46)
+texture = ExtResource("2_h1smu")
