@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dovy42n8fkorr"]
+
+[ext_resource type="Texture2D" uid="uid://37w4w70gwjo7" path="res://assets/button01.png" id="1_dix6m"]
+[ext_resource type="Texture2D" uid="uid://c3w85f7gk4ytg" path="res://assets/button03.png" id="1_meloh"]
+[ext_resource type="Texture2D" uid="uid://cslxnrv7dlhnw" path="res://assets/button02.png" id="2_hoomg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmb1d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0724x"]
+texture = ExtResource("1_meloh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_et8vy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5vhu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia7xp"]
+texture = ExtResource("1_dix6m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kfi7u"]
+texture = ExtResource("2_hoomg")
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_pmb1d")
+Button/styles/hover = SubResource("StyleBoxTexture_0724x")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_et8vy")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_o5vhu")
+Button/styles/normal = SubResource("StyleBoxTexture_ia7xp")
+Button/styles/pressed = SubResource("StyleBoxTexture_kfi7u")
