@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rf4i575pu4f1"]
+[gd_scene load_steps=7 format=3 uid="uid://rf4i575pu4f1"]
 
 [ext_resource type="Script" path="res://src/cctv.gd" id="1_e57qr"]
+[ext_resource type="Texture2D" uid="uid://c1gpnlu6ghcgi" path="res://assets/lencam.png" id="2_g1o1v"]
 [ext_resource type="Texture2D" uid="uid://ce74f6iirodmi" path="res://assets/vision.png" id="2_r6e68"]
+[ext_resource type="Texture2D" uid="uid://dgcga6j17xwd0" path="res://assets/bodycam.png" id="4_734xn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yxpf2"]
 blend_mode = 1
@@ -19,20 +21,30 @@ offset_top = -20.0
 offset_right = 12.0
 offset_bottom = 20.0
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999999, 9.53674e-07)
+scale = Vector2(0.75, 0.625)
+texture = ExtResource("4_734xn")
+
 [node name="RayCast2D" type="Area2D" parent="."]
 self_modulate = Color(0.363567, 0.0358416, 0.404521, 1)
 
+[node name="Lencam" type="Sprite2D" parent="RayCast2D"]
+position = Vector2(1, 40)
+texture = ExtResource("2_g1o1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="RayCast2D/Lencam"]
+material = SubResource("CanvasItemMaterial_yxpf2")
+position = Vector2(-1, 60)
+texture = ExtResource("2_r6e68")
+
 [node name="ColorRect" type="ColorRect" parent="RayCast2D"]
+visible = false
 offset_left = -18.0
 offset_top = 9.0
 offset_right = 19.0
 offset_bottom = 30.0
 color = Color(0.277447, 0.330058, 0.697748, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="RayCast2D/ColorRect"]
-material = SubResource("CanvasItemMaterial_yxpf2")
-position = Vector2(18, 83)
-texture = ExtResource("2_r6e68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RayCast2D"]
 position = Vector2(0.5, 77.5)

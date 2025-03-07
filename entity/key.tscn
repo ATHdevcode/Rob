@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://lmxxs3hjcnwv"]
+[gd_scene load_steps=3 format=3 uid="uid://lmxxs3hjcnwv"]
+
+[ext_resource type="Texture2D" uid="uid://bpml2tco70uj2" path="res://assets/key.png" id="1_3pwu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b47vl"]
 size = Vector2(64, 29)
@@ -6,6 +8,7 @@ size = Vector2(64, 29)
 [node name="key" type="Area2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -31.0
 offset_top = -13.0
 offset_right = 27.0
@@ -15,3 +18,6 @@ color = Color(0.988263, 0.840172, 0.19554, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -0.5)
 shape = SubResource("RectangleShape2D_b47vl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3pwu4")

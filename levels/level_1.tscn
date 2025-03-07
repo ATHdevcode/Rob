@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ce1pla2cr7m84"]
+[gd_scene load_steps=17 format=3 uid="uid://ce1pla2cr7m84"]
 
 [ext_resource type="PackedScene" uid="uid://cplwhutbpdq0t" path="res://entity/player.tscn" id="1_3reh4"]
 [ext_resource type="Texture2D" uid="uid://brqhaeye7014y" path="res://assets/tile1.png" id="1_6k65k"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brn7h7850ojyd" path="res://entity/key_door.tscn" id="9_5282w"]
 [ext_resource type="PackedScene" uid="uid://cvmwpcup4fgcl" path="res://entity/victory_door.tscn" id="10_6pbpl"]
 [ext_resource type="PackedScene" uid="uid://lmxxs3hjcnwv" path="res://entity/key.tscn" id="10_qfr5a"]
+[ext_resource type="PackedScene" uid="uid://b3xjpp1iy8g1s" path="res://entity/smoke.tscn" id="11_ghy6q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4kl8"]
 texture = ExtResource("1_6k65k")
@@ -125,7 +126,7 @@ shape = SubResource("RectangleShape2D_ycqpj")
 position = Vector2(227, 244)
 
 [node name="Player" parent="." instance=ExtResource("1_3reh4")]
-position = Vector2(58, 94)
+position = Vector2(70, 86)
 
 [node name="cctv" parent="." instance=ExtResource("2_xyd0q")]
 position = Vector2(431, 20)
@@ -138,10 +139,20 @@ speed = 0.8
 position = Vector2(218, 244)
 
 [node name="KeyDoor" parent="." instance=ExtResource("9_5282w")]
-position = Vector2(260, 479)
+position = Vector2(257, 478)
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="KeyDoor" index="3"]
+position = Vector2(0, -78)
+scale = Vector2(1, 1.266)
 
 [node name="key" parent="." instance=ExtResource("10_qfr5a")]
 position = Vector2(255, 75)
 
 [node name="VictoryDoor" parent="." instance=ExtResource("10_6pbpl")]
 position = Vector2(23, 602)
+
+[node name="smoke" parent="." instance=ExtResource("11_ghy6q")]
+position = Vector2(368, 286)
+
+[editable path="KeyDoor"]

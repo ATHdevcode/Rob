@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1plb1l114lu4"]
+[gd_scene load_steps=3 format=3 uid="uid://c1plb1l114lu4"]
+
+[ext_resource type="Texture2D" uid="uid://dif2x6ckuac7d" path="res://assets/hide.png" id="1_1wtqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rib1"]
 size = Vector2(68, 113)
@@ -15,3 +17,9 @@ offset_top = -56.0
 offset_right = 28.0
 offset_bottom = 42.0
 color = Color(0.148721, 0.600857, 0.767571, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999994, -8)
+scale = Vector2(1.5, 1.78125)
+texture = ExtResource("1_1wtqx")
+hframes = 2

@@ -74,3 +74,4 @@ position = Vector2(243, 619)
 
 [node name="VictoryDoor" parent="." instance=ExtResource("10_ercmh")]
 position = Vector2(52, 597)
+level = 2
